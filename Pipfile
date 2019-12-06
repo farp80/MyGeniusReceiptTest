@@ -4,15 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [requires]
-python_version = "3.6"
+python_version = "3.7.4"
 
 [packages]
-psycopg2-binary = "*"
 django-heroku = "*"
 gunicorn = "*"
 django-cors-headers = "*"
 djangorestframework = "*"
-pygraphviz = "*"
 django-extensions = "*"
 django-rest-swagger = "*"
 
