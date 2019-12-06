@@ -64,14 +64,13 @@ class Users( AbstractBaseUser ):
 
 class Recipes( models.Model ):
     name = models.CharField( max_length=255, null=False )
-    user = models.OneToOneField( Users, on_delete=models.CASCADE )
+    user = models.ForeignKey( Users, on_delete=models.CASCADE, related_name='user_recipe' )
     # ingredients_set ([] --> list) --> all the ingredients in the recipes
     # steps_set ([] --> list)
 
 class Steps( models.Model ):
     step_text = models.TextField(max_length=5012, null=False )
     recipe = models.ForeignKey( Recipes, on_delete=models.CASCADE, related_name='stepsForRecipe' )
-
 
 class Ingredients( models.Model ):
     text = models.TextField( null=False )
