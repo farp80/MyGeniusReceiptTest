@@ -24,5 +24,5 @@ schema_view = get_swagger_view(title='API Boilerplate - 4Geeks Academy')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
-    url(r'^$', schema_view)
+    #url(r'^$', schema_view)
 ]
