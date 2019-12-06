@@ -68,6 +68,10 @@ class Recipes( models.Model ):
     # ingredients_set ([] --> list) --> all the ingredients in the recipes
     # steps_set ([] --> list)
 
+    def __str__(self):
+        return self.name
+
+
 class Steps( models.Model ):
     step_text = models.TextField(max_length=5012, null=False )
     recipe = models.ForeignKey( Recipes, on_delete=models.CASCADE, related_name='stepsForRecipe' )

@@ -34,7 +34,7 @@ class RecipesView(APIView):
     def post(self,request):
         serializer = RecipesSerializer(data = request.data)
 
-        if(serializer.is_valid):
+        if(serializer.is_valid()):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
         else:
@@ -52,7 +52,7 @@ class RecipesView(APIView):
         except Recipes.DoesNotExist:
             return Response(error_object('Not found.'), status=status.HTTP_404_NOT_FOUND)        
        
-        if(serializer.is_valid):
+        if(serializer.is_valid()):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
         else:

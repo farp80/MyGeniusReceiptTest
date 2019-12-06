@@ -3,6 +3,7 @@ from api.models import Recipes, Users, Steps, Ingredients
 
 
 class RecipesSerializer(serializers.ModelSerializer):
+    #user = serializers.CharField(write_only=True, required=False)
     class Meta:
         model = Recipes
         fields = ('id', 'name', 'user')
